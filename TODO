@@ -1,0 +1,23 @@
+# TODO:
+// Create a base class Book
+// Implement REST call to put a book into the system (prov. name, author, barcode, quantity, price p.u.
+// Implement REST call to get book details from system (by barcode)
+// Implement REST call to update books information (by barcode and update field new value)
+// Implement REST call to calculate books total price (by barcode)
+    // Total price = Quantity * Price
+// Save data in files
+// Add Antique book classes
+    // Add release year parameter
+        // <1900
+    // Refactor Total price
+        // Total Price = Quantity * Price * (Current Year – Release Year) / 10.]
+// Add Science journals
+    // Add a science index value
+        // int between 1 – 10
+    // Refactor Total price
+        // Total Price = Quantity * Price * Science Index.
+// Test for quick storage
+// Test for update
+// Test for access
+// Test for total price
+// Test for saving data
