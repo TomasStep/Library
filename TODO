@@ -1,4 +1,5 @@
 # TODO:
+// First Create DataSet/DataFile?
 // Create a base class Book
 // Implement REST call to put a book into the system (prov. name, author, barcode, quantity, price p.u.
 // Implement REST call to get book details from system (by barcode)
