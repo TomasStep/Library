@@ -122,4 +122,37 @@ public class Books extends HttpServlet {
         sendAsJson(response, _booksDb.get(bookBId));
         return;
     }
+    // Adds new book in DB
+    // POST/books
+    protected void doPost(
+            HttpServletRequest request,
+            HttpServletResponse response)
+            throws ServletException, IOException {
+
+        String pathInfo = request.getPathInfo();
+
+        if(pathInfo == null || pathInfo.equals("/")){
+
+            StringBuilder buffer = new StringBuilder();
+            BufferedReader reader = request.getReader();
+            String line;
+            while ((line = reader.readLine()) != null) {
+                buffer.append(line);
+            }
+
+            String payload = buffer.toString();
+
+            Book book = _gson.fromJson(payload, Book.class);
+
+            book.barcode = "999";
+
+            _booksDb.put(book.barcode, book);
+
+            sendAsJson(response, book);
+        }
+        else {
+            response.sendError(HttpServletResponse.SC_BAD_REQUEST);
+            return;
+        }
+    }
 }
