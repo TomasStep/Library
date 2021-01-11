@@ -85,4 +85,41 @@ public class Books extends HttpServlet {
         out.print(res);
         out.flush();
     }
+    // Get books
+    // GET/books/
+    // GET/books/id
+    protected void doGet(
+            HttpServletRequest request,
+            HttpServletResponse response)
+            throws ServletException, IOException {
+
+        String pathInfo = request.getPathInfo();
+
+        if(pathInfo == null || pathInfo.equals("/")){
+
+            Collection<Book> models = _booksDb.values();
+
+            sendAsJson(response, models);
+            return;
+        }
+
+        String[] splits = pathInfo.split("/");
+
+        if(splits.length != 2) {
+
+            response.sendError(HttpServletResponse.SC_BAD_REQUEST);
+            return;
+        }
+
+        String bookBId = splits[1];
+
+        if(!_booksDb.containsKey(bookBId)) {
+
+            response.sendError(HttpServletResponse.SC_NOT_FOUND);
+            return;
+        }
+
+        sendAsJson(response, _booksDb.get(bookBId));
+        return;
+    }
 }
