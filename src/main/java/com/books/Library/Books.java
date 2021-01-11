@@ -46,6 +46,30 @@ public class Books extends HttpServlet {
 
         _gson = new Gson();
 
+        // TODO: make random?
+        String b1 = "123";
+        String b2 = "456";
+        String b3 = "789";
+        _booksDb.put(b1, new Book(
+                "TestName",
+                "TestAuthor",
+                b1,
+                1,
+                1.99f));
+        _booksDb.put(b2, new Book(
+                "TestName",
+                "TestAuthor",
+                b2,
+                1,
+                1.99f));
+        _booksDb.put(b3, new Book(
+                "TestName",
+                "TestAuthor",
+                b3,
+                1,
+                1.99f));
+    }
+
     //a utility method to send object
     //as JSON response
     private void sendAsJson(
