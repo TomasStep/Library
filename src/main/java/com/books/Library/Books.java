@@ -144,8 +144,11 @@ public class Books extends HttpServlet {
 
             Book book = _gson.fromJson(payload, Book.class);
 
-            book.barcode = "999";
-
+            // if barcode isn't described, give a specific/random one
+            if(book.barcode == "" || book.barcode == null) {
+                // TODO: generate random barcode
+                book.barcode = "999";
+            }
             _booksDb.put(book.barcode, book);
 
             sendAsJson(response, book);
