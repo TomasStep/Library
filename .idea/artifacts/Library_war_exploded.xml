@@ -13,6 +13,16 @@
         <element id="directory" name="classes">
           <element id="module-output" name="Library" />
         </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-core:2.9.6" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.9.6" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.9.6" />
+          <element id="library" level="project" name="Maven: com.google.code.gson:gson:2.8.6" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-web:5.1.5.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-beans:5.1.5.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-core:5.1.5.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-jcl:5.1.5.RELEASE" />
+        </element>
       </element>
       <element id="directory" name="META-INF">
         <element id="file-copy" path="$PROJECT_DIR$/target/Library-1.0-SNAPSHOT/META-INF/MANIFEST.MF" />
